@@ -35,37 +35,29 @@ class TestIsEquilibrium(unittest.TestCase):
     def test_true1(self):
         """ 高さの差が０ """
         root = NewNode(5)
+        root.left = NewNode(2)
+        root.right = NewNode(10)
 
-        r_left = NewNode(2)
-        root.left = r_left
-        r_right = NewNode(10)
-        root.right = r_right
-
-        r_left.left = NewNode(1)
-        r_left.right = NewNode(3)
-        r_right.left = NewNode(7)
-        r_right.right = NewNode(15)
+        root.left.left = NewNode(1)
+        root.left.right = NewNode(3)
+        root.right.left = NewNode(7)
+        root.right.right = NewNode(15)
 
         assert is_equilibrium(root) is True
 
     def test_true2(self):
         """ 高さの差が1 """
         root = NewNode(5)
-
-        r_left = NewNode(2)
-        root.left = r_left
-        r_right = NewNode(10)
-        root.right = r_right
-        r_left.left = NewNode(1)
+        root.left = NewNode(2)
+        root.right = NewNode(10)
+        root.left.left = NewNode(1)
 
         assert is_equilibrium(root) is True
 
     def test_false(self):
         root = NewNode(5)
-
-        r_left = NewNode(2)
-        root.left = r_left
-        r_left.left = NewNode(10)
+        root.left = NewNode(2)
+        root.left.left = NewNode(10)
 
         assert is_equilibrium(root) is False
 
