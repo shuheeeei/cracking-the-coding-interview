@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.left: Node = None
         self.right: Node = None
+        self.parent: Node = None
 
 
 class Tree:
