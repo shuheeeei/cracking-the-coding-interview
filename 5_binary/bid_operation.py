@@ -4,8 +4,8 @@ def get_bit(num, i) -> bool:
 
 
 def set_bit(num, i) -> int:
-    """ i番目を１にSETする"""
-    return num | 1 << i
+    """ i番目に１をSETする"""
+    return num | 1 << (i - 1)
 
 
 def clear_bit(num, i) -> int:
